@@ -1,4 +1,3 @@
-
 <!-- Modal -->
 <div class="modal fade" id="deleteSupplier" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -58,7 +57,7 @@
 <!-- nice scrollbar -->
 <script src="js/perfect-scrollbar.min.js"></script>
 <script>
-    var ps = new PerfectScrollbar('#sidebar');
+  var ps = new PerfectScrollbar('#sidebar');
 </script>
 <!-- fancy box js -->
 <script src="js/jquery-3.3.1.min.js"></script>
@@ -70,18 +69,18 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 <script>
-    $(document).ready(function(){
-      $(document).on('click','#btn-delete-supplier',function(){
-        var id = $(this).parent('td').parent('tr').find('td').eq(0).text();
-        $('#remove_supplier_id').val(id)
-      })
-
-      $(document).on('click','#btn-delete-product',function(){
-        var id = $(this).attr('remove-id');
-        $('#remove_product_id').val(id);      
-      })
+  $(document).ready(function() {
+    $(document).on('click', '#btn-delete-supplier', function() {
+      var id = $(this).parent('td').parent('tr').find('td').eq(0).text();
+      $('#remove_supplier_id').val(id)
     })
-  </script>
+
+    $(document).on('click', '#btn-delete-product', function() {
+      var id = $(this).attr('remove-id');
+      $('#remove_product_id').val(id);
+    })
+  })
+</script>
 </body>
 
 </html>

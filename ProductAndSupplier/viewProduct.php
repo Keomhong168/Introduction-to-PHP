@@ -31,7 +31,7 @@
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
-                                    <?php getProduct(); ?>                                    
+                                    <?php getProduct(); ?>
                                 </tbody>
                             </table>
                         </div>

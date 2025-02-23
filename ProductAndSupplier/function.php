@@ -147,7 +147,8 @@ function createProduct()
 createProduct();
 
 //=======This Function Get Data from Database working On Product========
-function getProduct(){
+function getProduct()
+{
     global $connection;
     $sql = "SELECT `t_product`.*,`t_supplier`.`name` AS `t_name`,`t_supplier`.`address` AS `t_address` FROM `tbl_product` AS `t_product` INNER JOIN `tbl_supplier` AS `t_supplier` ON `t_product`.`supplier_id` = `t_supplier`.`id` ORDER BY `t_product`.`id` DESC";
     $rs  = $connection->query($sql);
@@ -160,10 +161,10 @@ function getProduct(){
                 <td>' . $row['price'] . '</td>
                 <td>' . $row['qty'] . '</td>
                 <td>' . $row['total'] . '</td>
-                <td>'.$row['t_name'].' : '.$row['t_address'].'</td>
+                <td>' . $row['t_name'] . ' : ' . $row['t_address'] . '</td>
                 <td>
-                    <a href="updateProduct.php?id='.$row['id'].'" class="btn btn-warning">Update</a>
-                    <button class="btn btn-danger" remove-id="'.$row['id'].'" id="btn-delete-product" data-bs-toggle="modal" data-bs-target="#deleteProduct">Delete</button>
+                    <a href="updateProduct.php?id=' . $row['id'] . '" class="btn btn-warning">Update</a>
+                    <button class="btn btn-danger" remove-id="' . $row['id'] . '" id="btn-delete-product" data-bs-toggle="modal" data-bs-target="#deleteProduct">Delete</button>
                 </td>
             </tr>
         ';
@@ -171,23 +172,25 @@ function getProduct(){
 }
 
 //=======This Function remove Data from Database working On Product========
-function removeProduct(){
+function removeProduct()
+{
     global $connection;
-    if(isset($_POST['btn-remove-product'])){
+    if (isset($_POST['btn-remove-product'])) {
         $id = $_POST['remove_value'];
 
         $rs = $connection->query("DELETE FROM `tbl_product` WHERE `id`='$id'");
-        if($rs){
-            showSweetAlert("Remove Success","Product has been removed from table","success");
+        if ($rs) {
+            showSweetAlert("Remove Success", "Product has been removed from table", "success");
         }
     }
 }
 removeProduct();
 
 //=======This Function UpdateData working On Product========
-function updateProduct(){
+function updateProduct()
+{
     global $connection;
-    if(isset($_POST['btn-update-product'])){
+    if (isset($_POST['btn-update-product'])) {
         $name = $_POST['txt_name'];
         $model = $_POST['txt_model'];
         $price = $_POST['price'];
@@ -198,15 +201,12 @@ function updateProduct(){
         if (!empty($name) && !empty($model) && !empty($price) && !empty($qty) && !empty($supplier)) {
             $sql = "UPDATE `tbl_product` SET `name`='$name',`model`='$model',`price`='$price',`qty`='$qty',`total`='$total', `supplier_id`='$supplier' WHERE `id`='$update_id'";
             $rs  = $connection->query($sql);
-            if($rs){
-                showSweetAlert("Update Success","Product update successfully","success");
+            if ($rs) {
+                showSweetAlert("Update Success", "Product update successfully", "success");
             }
-        }
-        else{
-            showSweetAlert("Update Error","Please input all product field","error");
+        } else {
+            showSweetAlert("Update Error", "Please input all product field", "error");
         }
     }
 }
 updateProduct();
-
-?>

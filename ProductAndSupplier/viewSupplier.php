@@ -31,7 +31,7 @@
                                 <tbody>
 
                                     <?php getSupplier(); ?>
-                                    
+
                                 </tbody>
                             </table>
                         </div>

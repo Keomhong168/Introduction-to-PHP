@@ -12,7 +12,7 @@
         <!-- row -->
         <div class="col-12">
             <div class="col-8 mx-auto bg-light p-4">
-                <form action=""  method="POST" enctype="multipart/form-data">
+                <form action="" method="POST" enctype="multipart/form-data">
                     <label for="txt_name">Product Name</label>
                     <input type="text" name="txt_name" id="txt_name" class="my-2 form-control" placeholder="Product Name">
                     <label for="txt_model">Product Model</label>
